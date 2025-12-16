@@ -1,0 +1,107 @@
+#usda 1.0
+
+def Material "mat"
+{
+    token outputs:surface.connect      = </mat/pbrMat1.outputs:surface>
+    token outputs:displacement.connect = </mat/pbrMat1.outputs:displacement>
+
+    float inputs:ior = 1.9
+
+    string inputs:frame:tangentsPrimvarName = "tangents"
+
+    string inputs:frame:binormalsPrimvarName = "binormals"
+
+    string inputs:frame:stPrimvarName = "st"
+
+    def Shader "pbrMat1"
+    {
+        uniform token info:id = "UsdPreviewSurface"
+
+        token outputs:surface
+        token outputs:displacement
+
+        int inputs:useSpecularWorkflow       = 0
+        color3f  inputs:diffuseColor.connect = </mat/baseColorTex.outputs:rgb>
+        color3f  inputs:specularColor        = (0, 0, 0) (
+            colorSpace = "lin_srgb"
+        )
+        color3f  inputs:emissiveColor        = (0, 0, 0) (
+            colorSpace = "sRGB"
+        )
+        float    inputs:displacement         = 0.0
+        float    inputs:opacity              = 1.0
+        float    inputs:opacityThreshold     = 0.0
+        float    inputs:roughness            = 0.01
+        float    inputs:metallic.connect     = </mat/metallicTex.outputs:r>
+        float    inputs:clearcoat.connect    = </mat/clearcoatTex.outputs:r>
+        float    inputs:clearcoatRoughness.connect = </mat/clearcoatTex.outputs:g>
+        float    inputs:occlusion.connect    = </mat/PrimvarOcclusion.outputs:result>
+        normal3f inputs:normal.connect       = </mat/normalTex.outputs:rgb>
+        float    inputs:ior.connect          = </mat.inputs:ior>
+    }
+
+
+    def Shader "baseColorTex"
+    {
+        uniform token info:id = "UsdUVTexture"
+        float4 inputs:fallback = (0, 1, 0, 1)
+        asset inputs:file = @mat_baseColor.png@
+        float2 inputs:st.connect = </mat/PrimvarSt1.outputs:result>
+        token inputs:wrapS = "black"
+        token inputs:wrapT = "clamp"
+        float3 outputs:rgb
+        float outputs:a
+    }
+
+    def Shader "PrimvarSt1"
+    {
+        uniform token info:id = "UsdPrimvarReader_float2"
+        string inputs:varname = "st1"
+        float2 outputs:result
+    }
+
+    def Shader "metallicTex"
+    {
+        uniform token info:id = "UsdUVTexture"
+        float4 inputs:fallback = (0.3, 0, 0, 1)
+        asset inputs:file = @mat_metallic.png@
+        float2 inputs:st.connect = </mat/PrimvarSt1.outputs:result>
+        float outputs:r
+    }
+
+    def Shader "clearcoatTex"
+    {
+        uniform token info:id = "UsdUVTexture"
+        float4 inputs:fallback = (.5, .5, .5, .5)
+        asset inputs:file = @mat_clearcoat.png@
+        float2 inputs:st.connect = </mat/PrimvarSt1.outputs:result>
+        float outputs:r
+        float outputs:g
+    }
+
+
+    def Shader "normalTex"
+    {
+        uniform token info:id = "UsdUVTexture"
+        float2 inputs:st.connect = </mat/PrimvarSt.outputs:result>
+        float4 inputs:scale = (2.0, 2.0, 2.0, 2.0)
+        float4 inputs:bias  = (-1.0, -1.0, -1.0, -1.0)
+        float3 outputs:rgb
+    }
+
+    def Shader "PrimvarSt"
+    {
+        uniform token info:id = "UsdPrimvarReader_float2"
+        string inputs:varname.connect = </mat.inputs:frame:stPrimvarName>
+        float2 outputs:result
+    }
+
+
+    def Shader "PrimvarOcclusion"
+    {
+        uniform token info:id = "UsdPrimvarReader_float"
+        float inputs:fallback = 1.0
+        string inputs:varname = "ao"
+        float outputs:result
+    }
+}

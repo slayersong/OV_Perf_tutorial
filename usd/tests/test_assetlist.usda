@@ -1,0 +1,13 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+)
+
+def Xform "World"
+{
+    custom asset[] test:assetlist = [
+        @./asset.txt@,
+        @./asset_other.txt@,
+        @./existing_1042.txt@
+    ]
+}

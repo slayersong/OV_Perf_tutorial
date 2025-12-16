@@ -1,0 +1,48 @@
+#usda 1.0
+
+def Shader "tex_0"
+{
+    uniform token info:id = "UsdUVTexture"
+}
+
+def Shader "tex_1"
+{
+    uniform token info:id = "UsdUVTexture"
+    asset inputs:file = @asset.txt@
+}
+
+def Shader "tex_2"
+{
+    uniform token info:id = "UsdUVTexture"
+    asset inputs:file = @asset_other.txt@
+    asset inputs:file.timeSamples = {
+        4.0 : @asset.txt@
+    }
+}
+
+def Shader "tex_3"
+{
+    uniform token info:id = "UsdUVTexture"
+    asset inputs:file.timeSamples = {
+        4.0 : @asset.txt@,
+        5.0 : @asset_other.txt@,
+    }
+}
+
+def Shader "tex_4"
+{
+    uniform token info:id = "UsdUVTexture"
+    asset inputs:file = @non_existing_asset.txt@
+}
+
+def Shader "tex_udim_found"
+{
+    uniform token info:id = "UsdUVTexture"
+    asset inputs:file = @existing_<UDIM>.txt@
+}
+
+def Shader "tex_udim_missing"
+{
+    uniform token info:id = "UsdUVTexture"
+    asset inputs:file = @non_existing_<UDIM>.txt@
+}

@@ -1,0 +1,15 @@
+#usda 1.0
+(
+    defaultPrim = "Cube"
+)
+
+def Xform "Cube" (kind = "component")
+{
+    def "Geom" 
+    {
+        def Cube "cube" (prepend apiSchemas =  ["MotionAPI"])
+        {
+            double size = 25
+        }
+    }
+}

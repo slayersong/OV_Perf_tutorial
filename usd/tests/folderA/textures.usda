@@ -1,0 +1,105 @@
+#usda 1.0
+
+def Material "matA1"
+{
+    token outputs:surface.connect = </matA1/pbrMat.outputs:surface>
+
+    def Shader "pbrMat"
+    {
+        uniform token info:id = "UsdPreviewSurface"
+        color3f  inputs:diffuseColor.connect = </matA1/baseColorTex.outputs:rgb>
+        token outputs:surface
+    }
+
+    def Shader "baseColorTex"
+    {
+        uniform token info:id = "UsdUVTexture"
+        asset inputs:file = @asset1.txt@
+        float3 outputs:rgb
+    }
+
+    def Shader "PrimvarSt"
+    {
+        uniform token info:id = "UsdPrimvarReader_float2"
+        string inputs:varname = "st"
+        float2 outputs:result
+    }
+}
+
+def Material "matA2"
+{
+    token outputs:surface.connect = </matA2/pbrMat.outputs:surface>
+
+    def Shader "pbrMat"
+    {
+        uniform token info:id = "UsdPreviewSurface"
+        color3f  inputs:diffuseColor.connect = </matA2/baseColorTex.outputs:rgb>
+        token outputs:surface
+    }
+
+    def Shader "baseColorTex"
+    {
+        uniform token info:id = "UsdUVTexture"
+        asset inputs:file = @asset2.txt@
+        float3 outputs:rgb
+    }
+
+    def Shader "PrimvarSt"
+    {
+        uniform token info:id = "UsdPrimvarReader_float2"
+        string inputs:varname = "st"
+        float2 outputs:result
+    }
+}
+
+def Material "matA3"
+{
+    token outputs:surface.connect = </matA3/pbrMat.outputs:surface>
+
+    def Shader "pbrMat"
+    {
+        uniform token info:id = "UsdPreviewSurface"
+        color3f  inputs:diffuseColor.connect = </matA3/baseColorTex.outputs:rgb>
+        token outputs:surface
+    }
+
+    def Shader "baseColorTex"
+    {
+        uniform token info:id = "UsdUVTexture"
+        asset inputs:file = @asset1.txt@
+        float3 outputs:rgb
+    }
+
+    def Shader "PrimvarSt"
+    {
+        uniform token info:id = "UsdPrimvarReader_float2"
+        string inputs:varname = "st"
+        float2 outputs:result
+    }
+}
+
+def Material "matOmniA"
+{
+    token outputs:surface.connect = </matOmniA/pbrMat.outputs:surface>
+
+    def Shader "pbrMat"
+    {
+        uniform token info:id = "UsdPreviewSurface"
+        color3f  inputs:diffuseColor.connect = </matOmniA/baseColorTex.outputs:rgb>
+        token outputs:surface
+    }
+
+    def Shader "baseColorTex"
+    {
+        uniform token info:id = "UsdUVTexture"
+        asset inputs:file = @omniverse://my_texture.png@
+        float3 outputs:rgb
+    }
+
+    def Shader "PrimvarSt"
+    {
+        uniform token info:id = "UsdPrimvarReader_float2"
+        string inputs:varname = "st"
+        float2 outputs:result
+    }
+}

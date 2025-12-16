@@ -1,0 +1,23 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+    upAxis = "Y"
+    subLayers = [@./simple_cubes.usda@]
+)
+
+over "Protos"
+{
+    over Xform "cubes_srt"
+    (
+        instanceable = true
+    )
+    {
+    }
+
+    over Xform "group_srt"
+    (
+        instanceable = true
+    )
+    {
+    }
+}

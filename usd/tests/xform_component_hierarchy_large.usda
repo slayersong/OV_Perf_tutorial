@@ -1,0 +1,276 @@
+#usda 1.0
+(
+    customLayerData = {
+        dictionary cameraSettings = {
+            dictionary Front = {
+                double3 position = (0, 0, 50000)
+                double radius = 500
+            }
+            dictionary Perspective = {
+                double3 position = (-684.0099901981793, 885.6306764065882, 2003.7448640799307)
+                double3 target = (-0.0000016891776795091573, -0.0000028302785040068557, 0.0000012449334008124424)
+            }
+            dictionary Right = {
+                double3 position = (-50000, 0, 0)
+                double radius = 500
+            }
+            dictionary Top = {
+                double3 position = (0, 50000, 0)
+                double radius = 500
+            }
+            string boundCamera = "/OmniverseKit_Persp"
+        }
+        dictionary omni_layer = {
+            string authoring_layer = "./xform_component_hierarchy.usda"
+            dictionary muteness = {
+            }
+        }
+        dictionary renderSettings = {
+        }
+    }
+    defaultPrim = "World"
+    endTimeCode = 100
+    metersPerUnit = 0.01
+    startTimeCode = 0
+    timeCodesPerSecond = 24
+    upAxis = "Y"
+)
+
+over "Meshes"{
+    def Xform "bundle_10_meshes"{
+        def Mesh "mesh_0" {
+            int[] faceVertexCounts = [4]
+            int[] faceVertexIndices = [0, 1, 2, 3]
+            point3f[] points = [(-50, 0, -50), (50, 0, -50), (50, 0, 50), (-50, 0, 50)]
+        }
+        def Mesh "mesh_1" {
+            int[] faceVertexCounts = [4]
+            int[] faceVertexIndices = [0, 1, 2, 3]
+            point3f[] points = [(-50, 100, -50), (50, 100, -50), (50, 100, 50), (-50, 100, 50)]
+        }
+        def Mesh "mesh_2" {
+            int[] faceVertexCounts = [4]
+            int[] faceVertexIndices = [0, 1, 2, 3]
+            point3f[] points = [(-50, 200, -50), (50, 200, -50), (50, 200, 50), (-50, 200, 50)]
+        }
+        def Mesh "mesh_3" {
+            int[] faceVertexCounts = [4]
+            int[] faceVertexIndices = [0, 1, 2, 3]
+            point3f[] points = [(-50, 300, -50), (50, 300, -50), (50, 300, 50), (-50, 300, 50)]
+        }
+        def Mesh "mesh_4" {
+            int[] faceVertexCounts = [4]
+            int[] faceVertexIndices = [0, 1, 2, 3]
+            point3f[] points = [(-50, 400, -50), (50, 400, -50), (50, 400, 50), (-50, 400, 50)]
+        }
+        def Mesh "mesh_5" {
+            int[] faceVertexCounts = [4]
+            int[] faceVertexIndices = [0, 1, 2, 3]
+            point3f[] points = [(-50, 500, -50), (50, 500, -50), (50, 500, 50), (-50, 500, 50)]
+        }
+        def Mesh "mesh_6" {
+            int[] faceVertexCounts = [4]
+            int[] faceVertexIndices = [0, 1, 2, 3]
+            point3f[] points = [(-50, 600, -50), (50, 600, -50), (50, 600, 50), (-50, 600, 50)]
+        }
+        def Mesh "mesh_7" {
+            int[] faceVertexCounts = [4]
+            int[] faceVertexIndices = [0, 1, 2, 3]
+            point3f[] points = [(-50, 700, -50), (50, 700, -50), (50, 700, 50), (-50, 700, 50)]
+        }
+        def Mesh "mesh_8" {
+            int[] faceVertexCounts = [4]
+            int[] faceVertexIndices = [0, 1, 2, 3]
+            point3f[] points = [(-50, 800, -50), (50, 800, -50), (50, 800, 50), (-50, 800, 50)]
+        }
+        def Mesh "mesh_9" {
+            int[] faceVertexCounts = [4]
+            int[] faceVertexIndices = [0, 1, 2, 3]
+            point3f[] points = [(-50, 900, -50), (50, 900, -50), (50, 900, 50), (-50, 900, 50)]
+        }
+    }
+
+    def Xform "bundle_100_meshes"{
+        def Xform "ref_10_meshes_0"(
+            references = </Meshes/bundle_10_meshes>
+        )
+        {
+            double3 xformOp:translate = (0, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+        def Xform "ref_10_meshes_1"(
+            references = </Meshes/bundle_10_meshes>
+        )
+        {
+            double3 xformOp:translate = (0, 0, 100)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+        def Xform "ref_10_meshes_2"(
+            references = </Meshes/bundle_10_meshes>
+        )
+        {
+            double3 xformOp:translate = (0, 0, 200)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+        def Xform "ref_10_meshes_3"(
+            references = </Meshes/bundle_10_meshes>
+        )
+        {
+            double3 xformOp:translate = (0, 0, 300)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+        def Xform "ref_10_meshes_4"(
+            references = </Meshes/bundle_10_meshes>
+        )
+        {
+            double3 xformOp:translate = (0, 0, 400)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+        def Xform "ref_10_meshes_5"(
+            references = </Meshes/bundle_10_meshes>
+        )
+        {
+            double3 xformOp:translate = (0, 0, 500)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+        def Xform "ref_10_meshes_6"(
+            references = </Meshes/bundle_10_meshes>
+        )
+        {
+            double3 xformOp:translate = (0, 0, 600)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+        def Xform "ref_10_meshes_7"(
+            references = </Meshes/bundle_10_meshes>
+        )
+        {
+            double3 xformOp:translate = (0, 0, 700)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+        def Xform "ref_10_meshes_8"(
+            references = </Meshes/bundle_10_meshes>
+        )
+        {
+            double3 xformOp:translate = (0, 0, 800)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+        def Xform "ref_10_meshes_9"(
+            references = </Meshes/bundle_10_meshes>
+        )
+        {
+            double3 xformOp:translate = (0, 0, 900)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+    }
+}
+
+def Xform "World"
+{
+    def Xform "Xform_0"
+    {
+        double3 xformOp:rotateXYZ = (0, 0, 0)
+        double3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (300, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+
+        def Scope "Scope_0"
+        {
+            def Xform "bundle_100_meshes_0"(
+                references = </Meshes/bundle_100_meshes>
+            )
+            {
+                double3 xformOp:translate = (0, 0, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate"]
+            }
+            def Xform "bundle_100_meshes_1"(
+                references = </Meshes/bundle_100_meshes>
+            )
+            {
+                double3 xformOp:translate = (100, 0, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate"]
+            }
+            def Xform "bundle_100_meshes_2"(
+                references = </Meshes/bundle_100_meshes>
+            )
+            {
+                double3 xformOp:translate = (200, 0, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate"]
+            }
+            def Xform "bundle_100_meshes_3"(
+                references = </Meshes/bundle_100_meshes>
+            )
+            {
+                double3 xformOp:translate = (300, 0, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate"]
+            }
+            def Xform "bundle_100_meshes_4"(
+                references = </Meshes/bundle_100_meshes>
+            )
+            {
+                double3 xformOp:translate = (400, 0, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate"]
+            }
+            def Xform "bundle_100_meshes_5"(
+                references = </Meshes/bundle_100_meshes>
+            )
+            {
+                double3 xformOp:translate = (500, 0, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate"]
+            }
+            def Xform "bundle_100_meshes_6"(
+                references = </Meshes/bundle_100_meshes>
+            )
+            {
+                double3 xformOp:translate = (600, 0, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate"]
+            }
+            def Xform "bundle_100_meshes_7"(
+                references = </Meshes/bundle_100_meshes>
+            )
+            {
+                double3 xformOp:translate = (700, 0, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate"]
+            }
+            def Xform "bundle_100_meshes_8"(
+                references = </Meshes/bundle_100_meshes>
+            )
+            {
+                double3 xformOp:translate = (800, 0, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate"]
+            }
+            def Xform "bundle_100_meshes_9"(
+                references = </Meshes/bundle_100_meshes>
+            )
+            {
+                double3 xformOp:translate = (900, 0, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate"]
+            }
+        }
+    }
+}
+
+def Xform "Environment"
+{
+    double3 xformOp:rotateXYZ = (0, 0, 0)
+    double3 xformOp:scale = (1, 1, 1)
+    double3 xformOp:translate = (0, 0, 0)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+
+    def DistantLight "defaultLight" (
+        prepend apiSchemas = ["ShapingAPI"]
+    )
+    {
+        float angle = 1
+        float intensity = 3000
+        float shaping:cone:angle = 180
+        float shaping:cone:softness
+        float shaping:focus
+        color3f shaping:focusTint
+        asset shaping:ies:file
+        double3 xformOp:rotateXYZ = (315, 0, 0)
+        double3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+    }
+}
+
